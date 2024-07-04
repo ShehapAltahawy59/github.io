@@ -1,0 +1,59 @@
+
+{% include 'header.html' %}
+
+<div class="category-container">
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="/Business" class="category">Business</a></li>
+        <li><a href="/Health" class="category">Health</a></li>
+        <li><a href="/Sports" class="category">Sports</a></li>
+        <li><a href="/Technology" class="category">Technology</a></li>
+    </ul>
+</div>
+
+<main>
+    <div class="news-container" id="news-container">
+        {% for news in general_response %}
+            <div class="news-article">
+                {% if news['urlToImage'] %}
+                    <img src="{{ news['urlToImage'] }}" alt="News image">
+                {% else %}
+                    <img src="{{ url_for('static', filename='News_featured.png') }}" alt="Default news image">
+                {% endif %}
+                <h3>{{ news['title'] }}</h3>
+                {% if news['description'] %}
+                    <p>{{ news['description'] }}</p>
+                
+                {% endif %}
+                <a href="{{ news['url'] }}" target="_blank">Read more...</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ news['url'] }}" class="share-button" target="_blank">
+                    <img src="{{ url_for('static', filename='facebook-logo.png') }}" alt="Share on Facebook" class="facebook-logo">
+                </a>
+           
+                <button class="heart-button"
+                data-title="{{ news['title'] }}"
+                data-description="{{ news['description'] }}"
+                data-url="{{ news['url'] }}"
+                data-urlToImage = "{{ news['urlToImage'] }}"
+                
+                ></button>
+
+                
+            </div>
+        {% endfor %}
+    </div>
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        {% if current_page > 1 %}
+            <a href="{{ url_for(request.endpoint, query=query, page=current_page-1, pageSize=page_size) }}">&laquo; Previous</a>
+        {% endif %}
+        <span>Page {{ current_page }}</span>
+        {% if total_results > current_page * page_size %}
+            <a href="{{ url_for(request.endpoint, query=query, page=current_page+1, pageSize=page_size) }}">Next &raquo;</a>
+        {% endif %}
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>

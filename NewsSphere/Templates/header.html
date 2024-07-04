@@ -1,0 +1,39 @@
+{% set show_search_bar = show_search_bar|default(true) %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NewsSphere</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='News_featured.png') }}" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><a href="{{url_for('landing_page')}}">NewsSphere</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Saved_News">Saved News</a></li>
+                    <li><a href="/about">About Us</a></li>
+                </ul>
+            </nav>
+            {% if show_search_bar %}
+        <form id="search-form" class="search-form">
+            <input type="text" name="query" id="search-input" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        {% endif %}
+            <div class="auth-links">
+                {% if current_user.is_authenticated %}
+                <a href="/account" class="auth-link">Account</a>
+                <a href="/logout" class="auth-link">logout</a>
+                {% else %}
+                <a href="/login" class="auth-link">login</a>
+                <a href="/register" class="auth-link">register</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    

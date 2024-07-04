@@ -1,0 +1,488 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-container h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.auth-links a:hover {
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.news-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Set news container width to 70% */
+    margin: 0 auto; /* Center the news container */
+}
+
+.news-article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Add a border at the bottom of each article */
+    padding-bottom: 20px; /* Add padding at the bottom to separate articles */
+}
+
+.news-article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.news-article h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.news-article p {
+    color: #666;
+    font-size: 1rem;
+    
+}
+/* Add separator styles */
+
+
+/* Remove border from last article */
+.news-article:last-child {
+    border-bottom: none;
+}
+
+.news-article a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    bottom: 0;
+    border-radius: 10px;
+}
+.share-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.facebook-logo {
+    max-width: 17px; /* Set maximum width for the Facebook logo */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-container h1 {
+        margin-bottom: 20px;
+    }}
+
+.category-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.category-container h2 {
+    margin-bottom: 10px;
+}
+
+.category-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-container ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Add category styles */
+.category {
+    color: #333;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.category:hover {
+    border-color: #007bff;
+}
+
+.form{
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+} 
+
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #333;
+}
+
+ div div {
+    margin-bottom: 10px;
+} 
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    
+}
+
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.bio h2 {
+    margin-top: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.bio p {
+    color: #666;
+    margin: 15px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.social-media .social-link {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-media .social-link img {
+    width: 40px;
+    height: 40px;
+}
+
+.social-media .social-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.account-container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-header {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.account-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-section, .settings-section {
+    width: 48%;
+}
+
+.profile-section h2, .settings-section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-section p, .settings-section p {
+    margin: 10px 0;
+}
+
+.settings-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.settings-section a:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color: #d9534f;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+
+
+/* Heart button initial style */
+.heart-button {
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: green; /* Initial color is white */
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+}
+
+/* Heart button style when saved */
+.heart-button.saved {
+    font-size: 16px;
+    
+}
+
+.remove-button {
+    display: block;
+    padding: 10px 20px; /* Increase padding to allow more space for text */
+    background-color: #d9534f;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.remove-button:hover {
+    background-color: #c9302c;
+}
+
+
+/* .heart-button:hover {
+    color: #cc0000;
+} */
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}
+
+.pagination span {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
