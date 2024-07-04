@@ -1,59 +1,66 @@
-
-{% include 'header.html' %}
-
-<div class="category-container">
-    <h2>Categories</h2>
-    <ul>
-        <li><a href="/Business" class="category">Business</a></li>
-        <li><a href="/Health" class="category">Health</a></li>
-        <li><a href="/Sports" class="category">Sports</a></li>
-        <li><a href="/Technology" class="category">Technology</a></li>
-    </ul>
-</div>
-
-<main>
-    <div class="news-container" id="news-container">
-        {% for news in general_response %}
-            <div class="news-article">
-                {% if news['urlToImage'] %}
-                    <img src="{{ news['urlToImage'] }}" alt="News image">
-                {% else %}
-                    <img src="{{ url_for('static', filename='News_featured.png') }}" alt="Default news image">
-                {% endif %}
-                <h3>{{ news['title'] }}</h3>
-                {% if news['description'] %}
-                    <p>{{ news['description'] }}</p>
-                
-                {% endif %}
-                <a href="{{ news['url'] }}" target="_blank">Read more...</a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ news['url'] }}" class="share-button" target="_blank">
-                    <img src="{{ url_for('static', filename='facebook-logo.png') }}" alt="Share on Facebook" class="facebook-logo">
-                </a>
-           
-                <button class="heart-button"
-                data-title="{{ news['title'] }}"
-                data-description="{{ news['description'] }}"
-                data-url="{{ news['url'] }}"
-                data-urlToImage = "{{ news['urlToImage'] }}"
-                
-                ></button>
-
-                
-            </div>
-        {% endfor %}
-    </div>
-    <!-- Pagination Controls -->
-    <div class="pagination">
-        {% if current_page > 1 %}
-            <a href="{{ url_for(request.endpoint, query=query, page=current_page-1, pageSize=page_size) }}">&laquo; Previous</a>
-        {% endif %}
-        <span>Page {{ current_page }}</span>
-        {% if total_results > current_page * page_size %}
-            <a href="{{ url_for(request.endpoint, query=query, page=current_page+1, pageSize=page_size) }}">Next &raquo;</a>
-        {% endif %}
-    </div>
-</main>
-
-{% include 'footer.html' %}
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://github.com/your-username/your-repo">View Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="intro">
+        <img src="images/cover.jpg" alt="Cover Image" class="cover-image">
+        <div class="intro-text">
+            <h1>Project Name</h1>
+            <p>A one-line phrase or description of your project.</p>
+            <a href="https://github.com/your-username/your-repo" class="button">View Project</a>
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="images/feature1.jpg" alt="Feature 1 Image">
+            <h3>Feature 1</h3>
+            <p>Description of Feature 1.</p>
+        </div>
+        <div class="feature">
+            <img src="images/feature2.jpg" alt="Feature 2 Image">
+            <h3>Feature 2</h3>
+            <p>Description of Feature 2.</p>
+        </div>
+        <div class="feature">
+            <img src="images/feature3.jpg" alt="Feature 3 Image">
+            <h3>Feature 3</h3>
+            <p>Description of Feature 3.</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            This project was inspired by a personal experience or story. It was developed as a Portfolio Project for Holberton School.
+        </p>
+        <p>Links to team members' profiles:</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/your-linkedin">LinkedIn</a></li>
+            <li><a href="https://github.com/your-github">GitHub</a></li>
+            <li><a href="https://twitter.com/your-twitter">Twitter</a></li>
+        </ul>
+        <p>
+            You can find the code repository for this project on <a href="https://github.com/your-username/your-repo">GitHub</a>.
+        </p>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
